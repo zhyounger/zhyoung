@@ -1,0 +1,34 @@
+<!--pages/mine/mine.wxml-->
+<view class="top">
+  <text>关于博主</text>
+</view>
+
+<view class="container">
+  <view class="userinfo">
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="../../img/avatar.jpg" mode="cover"></image>
+    <text class="userinfo-nickname">{{blogger}}</text>
+    <view class='social-total'>
+      <view class='social'>
+        <image class='social-img' src='../../img/github.png'></image>
+        <text class='social-text' decode="{{true}}">&nbsp;:&nbsp;{{github}}</text>
+      </view>
+      <view class='social'>
+        <image class='social-img' src='../../img/weibo.png'></image>
+        <text class='social-text' decode="{{true}}">&nbsp;:&nbsp;{{weibo}}</text>
+      </view>
+      <view class='social'>
+        <image class='social-img' src='../../img/zhihu.png'></image>
+        <text class='social-text' decode="{{true}}">&nbsp;:&nbsp;{{zhihu}}</text>
+      </view>
+      <view class='social'>
+        <image class='social-img' src='../../img/email.png'></image>
+        <text class='social-text' decode="{{true}}">&nbsp;:&nbsp;{{email}}</text>
+      </view>
+    </view>
+  </view>
+  
+  <view class="usermotto">
+    <text class="user-motto">{{message}}</text>
+  </view>
+
+</view>
