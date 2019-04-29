@@ -7,7 +7,6 @@
     <text class='post_date'>{{post_date}}</text>
   </view>
   <view class='content_view'>
-    <!-- <text class='post_content'>{{post_content}}</text> -->
     <template is='wxParse' data='{{wxParseData:article.nodes}}' />
   </view>
 </scroll-view>
