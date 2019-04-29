@@ -1,0 +1,13 @@
+<view class="container">
+  <text class='about-text'>一枚2016级科研🐶，希望顺利毕业</text>
+  <view class='about-contact-view'>
+    <view class='about-contact'>
+      <image class='about-contact-img' src='../../img/browser.png' />
+      <text class='about-contact-text'>https://zhyoung.cn</text>
+    </view>
+    <view class='about-contact'>
+      <image class='about-contact-img' src='../../img/email.png' />
+      <text class='about-contact-text'>zhyoung@live.cn</text>
+    </view>
+  </view>
+</view>

@@ -1,33 +1,45 @@
 {
   "pages": [
-    "pages/archive/archive",
+    "pages/archives/archives",
+    "pages/about/about",
     "pages/index/index",
+    "pages/word/word",
     "pages/logs/logs",
-    "pages/mine/mine"
+    "pages/post/post"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
+    "color": "#000",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "img/shouye.png",
-        "selectedIconPath": "img/shouye-2.png"
+        "text": "首 页",
+        "iconPath": "img/home.png",
+        "selectedIconPath": "img/home-2.png"
       },
       {
-        "pagePath": "pages/archive/archive",
-        "text": "分类",
+        "pagePath": "pages/archives/archives",
+        "text": "博 文",
         "iconPath": "img/archive.png",
         "selectedIconPath": "img/archive-2.png"
       },
       {
-        "pagePath": "pages/mine/mine",
-        "text": "关于",
+        "pagePath": "pages/word/word",
+        "text": "段 子",
+        "iconPath": "img/container.png",
+        "selectedIconPath": "img/container-2.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "关 于",
         "iconPath": "img/wode.png",
         "selectedIconPath": "img/wode-2.png"
       }

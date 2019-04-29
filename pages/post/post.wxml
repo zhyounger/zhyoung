@@ -1,0 +1,13 @@
+<!--pages/post/post.wxml-->
+<import src='../../wxParse/wxParse.wxml' />
+<loading hidden="{{loadingHidden}}">正在加载...</loading>
+<scroll-view scroll-y="true" bindscrolltoupper="bindscrolltoupper" bindscrolltolower="bindscrolltolower" style='height: 100%;'> 
+  <view class='top_view'>
+    <text class='post_title'>{{post_title}}</text>
+    <text class='post_date'>{{post_date}}</text>
+  </view>
+  <view class='content_view'>
+    <!-- <text class='post_content'>{{post_content}}</text> -->
+    <template is='wxParse' data='{{wxParseData:article.nodes}}' />
+  </view>
+</scroll-view>

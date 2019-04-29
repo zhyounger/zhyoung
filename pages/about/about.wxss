@@ -1,0 +1,31 @@
+/* pages/about/about.wxss */
+.about-text{
+  font-size: 45rpx;
+}
+
+.about-contact-view{
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.about-contact{
+  margin-top: 5rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.about-contact-img{
+  margin-top: 10rpx;
+  height: 20rpx;
+  width: 20rpx;
+  border-radius: 60rpx;
+}
+
+.about-contact-text{
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+  margin-right: 15rpx;
+  font-size: 20rpx;
+}
