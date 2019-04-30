@@ -11,6 +11,7 @@ Page({
     post_content: '',
     post_date: '',
     post_comment: '',
+    comment_count: '',
     loadingHidden: false
   },
 
@@ -64,6 +65,7 @@ Page({
       post_content: '',
       post_date: '',
       post_comment: '',
+      comment_count: '',
       loadingHidden: false
     });
     this.requestPostData(this.data.id);
@@ -101,9 +103,10 @@ Page({
           post_title: res.data.data[0].post_title,
           post_date: res.data.data[0].post_date,
           post_content: res.data.data[0].post_content,
+          comment_count: res.data.data[0].comment_count,
           loadingHidden: true
         })
-        WxParse.wxParse('article', 'html', that.data.post_content, that, 5);
+        WxParse.wxParse('article', 'html', that.data.post_content, that, 10);
       }
     })
   }

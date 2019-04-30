@@ -18,17 +18,26 @@
 
 .content_view {
   margin-top: 30rpx;
-  margin-left: 25rpx;
-  margin-right: 25rpx;
-}
-
-.post_content {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  line-height: 150% !important;
   text-align: justify;
-  text-align-last: justify;
+  /* text-align-last: justify; */
 }
 
 .post_content::after {
   width: 100%;
   display: inline-block;
   content: '';
+}
+
+.comment_view {
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-bottom: 100rpx;
+}
+
+.comment_text {
+  font-weight: 700;
 }

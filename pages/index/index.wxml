@@ -10,5 +10,20 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
-
+  <view class='finish-todo'>
+    <view class='list'>
+      <text class='list-title'>Finished:</text>
+      <text>1. 段子页面</text>
+      <text>2. 归档页面</text>
+      <text>3. 文章页面</text>
+    </view>
+    <view class='list'>
+      <text class='list-title'>Todo List:</text>
+      <text>1. 分类页面</text>
+      <text>2. 评论功能</text>
+      <text>3. 点赞功能</text>
+      <text>4. 样式排布</text>
+      <text>5. .......</text>
+    </view>
+  </view>
 </view>
