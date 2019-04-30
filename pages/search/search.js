@@ -1,4 +1,4 @@
-// pages/archives/archives.js
+// pages/search/search.js
 Page({
 
   /**
@@ -6,6 +6,7 @@ Page({
    */
   data: {
     list: [],
+    renderFlag: true,
     loadingHidden: false
   },
 
@@ -13,7 +14,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.requestData();
+    // console.log(options.s);
+    this.requestData(options.s);
   },
 
   /**
@@ -48,19 +50,14 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    this.setData({
-      list: [],
-      loadingHidden: false
-    });
-    this.requestData();
-    wx.stopPullDownRefresh();
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    this.requestData('list');
+
   },
 
   /**
@@ -70,31 +67,40 @@ Page({
 
   },
 
-  requestData: function () {
+  requestData: function (s) {
     var that = this;
     wx.request({
       url: 'https://zhyoung.cn/api/get_post.php',
       data: {
-        type: 'list'
+        type: 'search',
+        s: s
       },
       method: 'GET',
       success: function (res) {
-        // console.log("this is response:",res.data.data);
-        that.setData({
-          list: res.data.data,
-          loadingHidden: true
-        })
+        if (res.data.data.length>0) {
+          console.log("recieve something");
+          // console.log("this is response:",res.data.data.length);
+          that.setData({
+            list: res.data.data,
+            renderFlag: true,
+            loadingHidden: true
+          })
+        }
+        else {
+          that.setData({
+            renderFlag: false,
+            loadingHidden: true
+          })
+          console.log("Nothing");
+        }
       }
     })
   },
 
   goToPostPage: function (event) {
-    // console.log(event);
     // console.log("--------",event.target.id);
     wx.navigateTo({
-      url: '/pages/post/post?id=' + event.target.id
+      url: '/pages/post/post?id=' + event.target.id,
     })
   }
-
 })
-

@@ -97,8 +97,6 @@ Page({
       method: 'GET',
       success: function (res) {
         // console.log("\nthis is post response:\n", res.data);
-        // console.log("\nthis is post title:", res.data.data[0].post_title);
-        // console.log("\nthis is post content:", res.data.data[0].post_content);
         that.setData({
           post_title: res.data.data[0].post_title,
           post_date: res.data.data[0].post_date,
@@ -106,7 +104,7 @@ Page({
           comment_count: res.data.data[0].comment_count,
           loadingHidden: true
         })
-        WxParse.wxParse('article', 'html', that.data.post_content, that, 10);
+        WxParse.wxParse('article', 'html', that.data.post_content, that, 5);
       }
     })
   }

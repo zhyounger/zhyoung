@@ -7,7 +7,9 @@
     <view class='containsView'>
     
       <!-- 中间内容 -->
-      <text class='centerContent'>{{item.text}}</text>
+      <view  class='centerContent'>
+        <text>{{item.text}}</text>
+      </view>
       <!-- 底部view样式 -->
       <view class='bottomView'>
         <view class='bottomItemView'>

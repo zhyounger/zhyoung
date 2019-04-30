@@ -52,14 +52,9 @@
 
 .centerContent{
   text-align: justify;
-  text-align-last: justify;
+  /* text-align-last: justify; */ /*这是最后一行两端对齐*/
   font-size: 30rpx;
-}
-
-.centerContent::after {
-  width: 100%;
-  display: inline-block;
-  content: '';
+  text-indent: 2em;
 }
 
 .bottomView{

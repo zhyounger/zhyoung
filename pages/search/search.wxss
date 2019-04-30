@@ -9,7 +9,7 @@
 }
 
 .ps {
-  font-size: 15rpx;
+  font-size: 20rpx;
   text-align: center;
   margin-top: 5rpx;
 }
@@ -21,4 +21,12 @@
 
 .bottomItembtn::after {
   border: none;
+}
+
+.notice {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 60rpx;
+  margin-top: 200rpx;
 }

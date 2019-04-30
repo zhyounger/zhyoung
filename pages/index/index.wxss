@@ -18,7 +18,7 @@
 
 .usermotto {
   font-size: 40rpx;
-  margin-top: 80rpx;
+  margin-top: 50rpx;
 }
 
 .finish-todo {
@@ -41,4 +41,26 @@
   font-size: 30rpx;
   text-align: justify;
   margin-top: 50rpx;
+}
+
+.search-view {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80rpx;
+}
+
+.search-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+}
+
+.search-input {
+  border: 3rpx solid;
+  border-radius: 15rpx;
+}
+
+.search-icon {
+  margin-left: 20rpx;
 }

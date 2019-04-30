@@ -11,19 +11,20 @@
         <text class="post_date">{{item.post_date}}</text>
       </view>
       <!-- 中间内容 -->
-      <text class='centerContent'>{{item.post_excerpt}}</text>
+      <view class='centerContent'>
+        <text>{{item.post_excerpt}}</text>
+      </view>
+      <view class='ps'>
+        <text>温馨提示：为保持良好浏览体验，请访问PC站点：zhyoung.cn</text>
+      </view>
       <!-- 底部view样式 -->
       <view class='bottomView'>
         <view class='bottomItemView'>
-          <image class='bottomItemImage' src='../../img/ding.png'></image>
-          <text class='bottomItemText'>{{item.ding}}</text>
+          <image class='bottomItemImage' src='../../img/comment.png'></image>
+          <text class='bottomItemText'>{{item.comment_count}}</text>
         </view>
         <view class='bottomItemView'>
           <button id='{{item.ID}}' class='bottomItemText bottomItembtn' bindtap='goToPostPage'>点击阅读更多</button>
-        </view>
-        <view class='bottomItemView'>
-          <image class='bottomItemImage' src='../../img/comment.png'></image>
-          <text class='bottomItemText'>{{item.comment_count}}</text>
         </view>
       </view>
     </view>

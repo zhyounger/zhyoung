@@ -4,6 +4,7 @@ const app = getApp()
 
 Page({
   data: {
+    searchText: '',
     motto: 'zhyoung 个人博客，建设ing...',
     userInfo: {},
     hasUserInfo: false,
@@ -49,6 +50,15 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+  searchText: function(e) {
+    // console.log(e);
+    this.data.searchText = e.detail.value;
+  },
+  search: function(e) {
+    wx.navigateTo({
+      url: '../search/search?s='+this.data.searchText,
     })
   }
 })
