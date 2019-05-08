@@ -1,5 +1,7 @@
 <!--pages/post/post.wxml-->
-<import src='../../wxParse/wxParse.wxml' />
+<!--引入towxml模版入口文件，并使用模版-->
+<import src="/towxml/entry.wxml"/>
+
 <loading hidden="{{loadingHidden}}">正在加载...</loading>
 <scroll-view scroll-y="true" bindscrolltoupper="bindscrolltoupper" bindscrolltolower="bindscrolltolower" style='height: 100%;'> 
   <view class='top_view'>
@@ -7,7 +9,7 @@
     <text class='post_date'>{{post_date}}</text>
   </view>
   <view class='content_view'>
-    <template is='wxParse' data='{{wxParseData:article.nodes}}' />
+    <template is="entry" data="{{...post_content}}"/>
   </view>
   <view class='comment_view'>
     <text class='comment_text'>评论({{comment_count}}):</text>

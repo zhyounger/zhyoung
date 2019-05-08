@@ -1,17 +1,20 @@
 .post_title {
   text-align: center;
   font-size: 25rpx;
+  font-weight: 900;
 }
 
 .post_date {
   text-align: center;
   font-size: 18rpx;
+  color: #b8b2b2;
 }
 
 .ps {
-  font-size: 20rpx;
+  font-size: 23rpx;
   text-align: center;
   margin-top: 5rpx;
+  color: #b8b2b2;
 }
 
 .bottomItembtn {

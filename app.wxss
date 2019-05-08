@@ -1,6 +1,6 @@
 /**app.wxss**/
 
-@import "./wxParse/wxParse.wxss";
+@import '/towxml/style/main.wxss';
 
 .container {
   height: 100%;
@@ -8,7 +8,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 200rpx 0;
+  padding: 50rpx 0;
   box-sizing: border-box;
 } 
 
@@ -89,5 +89,5 @@
 .divLine{
   background: #f3f3f3;
   width: 100%;
-  height: 15rpx;
+  height: 10rpx;
 }

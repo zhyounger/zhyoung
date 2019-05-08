@@ -68,33 +68,41 @@ Page({
   },
 
   requestData: function (s) {
-    var that = this;
-    wx.request({
-      url: 'https://zhyoung.cn/api/get_post.php',
-      data: {
-        type: 'search',
-        s: s
-      },
-      method: 'GET',
-      success: function (res) {
-        if (res.data.data.length>0) {
-          console.log("recieve something");
-          // console.log("this is response:",res.data.data.length);
-          that.setData({
-            list: res.data.data,
-            renderFlag: true,
-            loadingHidden: true
-          })
+    if (s==='') {
+      this.setData({
+        renderFlag: false,
+        loadingHidden: true
+      })
+    }
+    else {
+      var that = this;
+      wx.request({
+        url: 'https://zhyoung.cn/api/get_post.php',
+        data: {
+          type: 'search',
+          s: s
+        },
+        method: 'GET',
+        success: function (res) {
+          if (res.data.data.length>0) {
+            console.log("recieve something");
+            // console.log("this is response:",res.data.data.length);
+            that.setData({
+              list: res.data.data,
+              renderFlag: true,
+              loadingHidden: true
+            })
+          }
+          else {
+            that.setData({
+              renderFlag: false,
+              loadingHidden: true
+            })
+            console.log("Nothing");
+          }
         }
-        else {
-          that.setData({
-            renderFlag: false,
-            loadingHidden: true
-          })
-          console.log("Nothing");
-        }
-      }
-    })
+      })
+    }
   },
 
   goToPostPage: function (event) {

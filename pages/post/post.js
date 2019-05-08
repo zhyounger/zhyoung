@@ -1,5 +1,6 @@
 // pages/post/post.js
-const WxParse = require('../../wxParse/wxParse.js');
+const Towxml = require('../../towxml/main');     //引入towxml库
+
 Page({
 
   /**
@@ -25,7 +26,7 @@ Page({
     });
     this.requestPostData(this.data.id); 
     var that = this;
-    console.log("------------id is: \n", that.data.id);
+    // console.log("------------id is: \n", that.data.id);
   },
 
   /**
@@ -97,14 +98,15 @@ Page({
       method: 'GET',
       success: function (res) {
         // console.log("\nthis is post response:\n", res.data);
+        let towxml = new Towxml();
+        let contentData = towxml.toJson(res.data.data[0].post_content, 'html');
         that.setData({
           post_title: res.data.data[0].post_title,
           post_date: res.data.data[0].post_date,
-          post_content: res.data.data[0].post_content,
+          post_content: contentData,
           comment_count: res.data.data[0].comment_count,
           loadingHidden: true
-        })
-        WxParse.wxParse('article', 'html', that.data.post_content, that, 5);
+        });
       }
     })
   }

@@ -15,7 +15,7 @@
         <text>{{item.post_excerpt}}</text>
       </view>
       <view class='ps'>
-        <text>温馨提示：为保持良好浏览体验，请访问PC站点：zhyoung.cn</text>
+        <text>温馨提示：为保持良好浏览体验，请使用PC访问站点：zhyoung.cn</text>
       </view>
       <!-- 底部view样式 -->
       <view class='bottomView'>

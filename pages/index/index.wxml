@@ -12,14 +12,14 @@
   </view>
   <view class='finish-todo'>
     <view class='list'>
-      <text class='list-title'>Finished:</text>
+      <text class='list-title'>Done:</text>
       <text>1. 段子页面</text>
       <text>2. 归档页面</text>
       <text>3. 文章页面</text>
       <text>4. 搜索功能</text>
     </view>
     <view class='list'>
-      <text class='list-title'>Todo List:</text>
+      <text class='list-title'>Todo:</text>
       <text>1. 分类页面</text>
       <text>2. 评论功能</text>
       <text>3. 点赞功能</text>

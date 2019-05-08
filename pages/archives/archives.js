@@ -88,11 +88,11 @@ Page({
     })
   },
 
-  goToPostPage: function (event) {
+  goToPostPage: function (e) {
     // console.log(event);
     // console.log("--------",event.target.id);
     wx.navigateTo({
-      url: '/pages/post/post?id=' + event.target.id
+      url: '/pages/post/post?id=' + e.target.id
     })
   }
 

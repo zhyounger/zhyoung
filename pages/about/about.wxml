@@ -1,13 +1,107 @@
+<loading hidden="{{loadingHidden}}">正在加载...</loading>
+
 <view class="container">
-  <text class='about-text'>一枚2016级科研🐶，希望顺利毕业</text>
-  <view class='about-contact-view'>
-    <view class='about-contact'>
-      <image class='about-contact-img' src='../../img/browser.png' />
-      <text class='about-contact-text'>https://zhyoung.cn</text>
+  <view class='top-view'>
+    <text class='about-text'>一枚2016级科研🐶，希望顺利毕业</text>
+    <view class='about-contact-view'>
+      <view class='about-contact'>
+        <image class='about-contact-img' src='../../img/browser.png' />
+        <text class='about-contact-text'>https://zhyoung.cn</text>
+      </view>
+      <view class='about-contact'>
+        <image class='about-contact-img' src='../../img/email.png' />
+        <text class='about-contact-text'>zhyoung@live.cn</text>
+      </view>
     </view>
-    <view class='about-contact'>
-      <image class='about-contact-img' src='../../img/email.png' />
-      <text class='about-contact-text'>zhyoung@live.cn</text>
+    <view class='message-top' bindtap='messageInput'>
+      <view>
+        <text class='message-title'>留言区</text>
+        <text class='message-count'>({{list.length}}):</text>
+      </view>
+      
+      <view>
+        <text class='message-btn'>点此留言</text>
+      </view>
     </view>
   </view>
+
+  <view class='scroll-view' style='height:{{scrollViewHeight}}rpx;'>
+    <scroll-view scroll-y="true" style='height: 100%'>
+      <block wx:for-items="{{list}}">
+        <view class='contains-view'>
+          <view class='comment-floor-view'>
+            <view><text>{{item.comment_ID}}</text></view>
+            <view><text>楼</text></view>
+          </view>
+          
+          <view class='left-line'></view>
+
+          <view class='comment-right-view'>
+            <view class='author-date-view'>
+              <text class='comment-author'>{{item.comment_author}}</text>
+              <text class='comment-date'>{{item.comment_date}}</text>
+            </view>
+
+            <view class='comment-content-view'>
+              <view wx:if="{{item.comment_parent==='0'}}" class='comment-bottom'>
+                <text class='comment-content-text'>{{item.comment_content}}</text>
+              </view>
+
+              <view wx:else class='comment-bottom'>
+                <text class='reply-text'>回复</text>
+                <text class='floor-text'>{{item.comment_parent}}楼：</text>
+                <text class='comment-content-text'>{{item.comment_content}}</text>
+              </view>
+
+              <button id='{{item.comment_ID}}' class='reply-btn' bindtap='replyInput'>回复</button>
+            </view>
+          </view>
+          <!-- <view class='comment-head'>
+            <text class='comment-id'>{{item.comment_ID}}楼</text>
+            <text class='comment-author'>{{item.comment_author}}</text>
+            <text class='comment-date'>{{item.comment_date}}</text>
+          </view>
+          <view wx:if="{{item.comment_parent==='0'}}">
+            <view class='comment-bottom'>
+              <text class='comment-content'>{{item.comment_content}}</text>
+            </view>
+          </view>
+
+          <view wx:else>
+            <view class='comment-bottom'>
+              <text class='reply'>回复</text>
+              <text class='floor'>{{item.comment_parent}}楼：</text>
+              <text class='comment-content'>{{item.comment_content}}</text>
+            </view>
+          </view>
+          <button id='{{item.comment_ID}}' class='reply-btn' bindtap='replyInput'>回复</button> -->
+        </view>
+
+        <modal hidden="{{replyHidden}}" title='填写评论内容' confir-text='回复' cancel-text='取消' bindcancel='cancel' bindconfirm='confirm'>
+          <input type='text' placeholder='请填写您的昵称' auto-focus='' bindinput='setNickName' value='{{nickName}}'></input>
+          <view class='divLine'></view>
+          <input type='text' placeholder='请填写您的邮箱' auto-focus='' bindinput='setEmail' value='{{email}}'></input>
+          <view class='divLine'></view>
+          <textarea  type='text' placeholder='请填写评论内容' auto-focus='' bindinput='setComment' value='{{messageContent}}'></textarea>
+          <view class='divLine'></view>
+        </modal>
+
+        <view class='divLine'></view>
+      </block>
+    </scroll-view>
+  </view>
+
+  <modal hidden="{{messageHidden}}" title='填写留言内容' confir-text='确定' cancel-text='取消' bindcancel='cancel' bindconfirm='sendMessage'>
+    <input type='text' placeholder='请填写您的昵称' auto-focus='' bindinput='setNickName' value='{{nickName}}'></input>
+    <view class='divLine'></view>
+    <input type='text' placeholder='请填写您的邮箱' auto-focus='' bindinput='setEmail' value='{{email}}'></input>
+    <view class='divLine'></view>
+    <textarea type='text' placeholder='请填写留言内容' auto-focus='' bindinput='setComment' value='{{messageContent}}'></textarea>
+    <view class='divLine'></view>
+  </modal>
+
+  <modal hidden="{{tipHidden}}" title='提示！' confir-text='确定' cancel-text='取消' bindcancel='back' bindconfirm='back'>
+    <text>{{tip}}</text>
+  </modal>
+
 </view>

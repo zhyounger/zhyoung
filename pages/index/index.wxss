@@ -29,7 +29,7 @@
 
 .list-title {
   font-size: 40rpx;
-  font-weight: 500;
+  font-weight: 900;
   margin-bottom: 20rpx;
 }
 
@@ -46,7 +46,8 @@
 .search-view {
   display: flex;
   flex-direction: column;
-  margin-top: 80rpx;
+  position: fixed;
+  bottom: 100rpx;
 }
 
 .search-box {

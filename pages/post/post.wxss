@@ -14,12 +14,11 @@
 .post_date {  
   font-size: 30rpx;
   text-align: center;
+  color: #b8b2b2;
 }
 
 .content_view {
   margin-top: 30rpx;
-  margin-left: 20rpx;
-  margin-right: 20rpx;
   line-height: 150% !important;
   text-align: justify;
   /* text-align-last: justify; */
