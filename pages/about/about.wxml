@@ -43,38 +43,20 @@
             </view>
 
             <view class='comment-content-view'>
-              <view wx:if="{{item.comment_parent==='0'}}" class='comment-bottom'>
+              <view wx:if="{{item.comment_parent==='0'}}" class='comment-bottom-view'>
                 <text class='comment-content-text'>{{item.comment_content}}</text>
               </view>
 
-              <view wx:else class='comment-bottom'>
+              <view wx:else class='comment-bottom-view'>
                 <text class='reply-text'>回复</text>
                 <text class='floor-text'>{{item.comment_parent}}楼：</text>
                 <text class='comment-content-text'>{{item.comment_content}}</text>
               </view>
-
-              <button id='{{item.comment_ID}}' class='reply-btn' bindtap='replyInput'>回复</button>
+              <view class='reply-btn-view'>
+                <button id='{{item.comment_ID}}' class='reply-btn' bindtap='replyInput'>回复</button>
+              </view>
             </view>
           </view>
-          <!-- <view class='comment-head'>
-            <text class='comment-id'>{{item.comment_ID}}楼</text>
-            <text class='comment-author'>{{item.comment_author}}</text>
-            <text class='comment-date'>{{item.comment_date}}</text>
-          </view>
-          <view wx:if="{{item.comment_parent==='0'}}">
-            <view class='comment-bottom'>
-              <text class='comment-content'>{{item.comment_content}}</text>
-            </view>
-          </view>
-
-          <view wx:else>
-            <view class='comment-bottom'>
-              <text class='reply'>回复</text>
-              <text class='floor'>{{item.comment_parent}}楼：</text>
-              <text class='comment-content'>{{item.comment_content}}</text>
-            </view>
-          </view>
-          <button id='{{item.comment_ID}}' class='reply-btn' bindtap='replyInput'>回复</button> -->
         </view>
 
         <modal hidden="{{replyHidden}}" title='填写评论内容' confir-text='回复' cancel-text='取消' bindcancel='cancel' bindconfirm='confirm'>
