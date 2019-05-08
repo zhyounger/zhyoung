@@ -121,8 +121,9 @@ Page({
   },
 
   confirm: function (e) {
-    if (this.data.nickName.length == 0 || this.data.nickName.email == 0 || this.data.nickName.messageContent == 0) {
-      this.setData({
+    var that = this;
+    if (that.data.nickName.length == 0 || that.data.email == 0 || that.data.messageContent == 0) {
+      that.setData({
         tip: '请填写完整的昵称、邮箱以及评论内容！',
         tipHidden: false,
         replyHidden: true
@@ -130,8 +131,8 @@ Page({
     }
     else {
       // // 写数据库功能。。。
-      this.writeToDb(this.data.ID, this.data.nickName, this.data.email, this.data.messageContent);
-      this.onPullDownRefresh();
+      that.writeToDb(that.data.ID, that.data.nickName, that.data.email, that.data.messageContent);
+      that.onPullDownRefresh();
     }
   },
 
@@ -152,7 +153,7 @@ Page({
   },
 
   sendMessage: function (e) {
-    if (this.data.nickName.length == 0 || this.data.nickName.email == 0 || this.data.nickName.messageContent == 0) {
+    if (this.data.nickName.length == 0 || this.data.email.length == 0 || this.data.messageContent.length == 0) {
       this.setData({
         tip: '请填写完整的昵称、邮箱以及留言内容！',
         tipHidden: false,
@@ -181,6 +182,10 @@ Page({
   back: function (e) {
     this.setData({
       tipHidden: true,
+      nickName: '',
+      email: '',
+      messageContent: '',
+      tip: ''
     })
   },
 

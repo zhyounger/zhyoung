@@ -59,19 +59,19 @@
           </view>
         </view>
 
-        <modal hidden="{{replyHidden}}" title='填写评论内容' confir-text='回复' cancel-text='取消' bindcancel='cancel' bindconfirm='confirm'>
-          <input type='text' placeholder='请填写您的昵称' auto-focus='' bindinput='setNickName' value='{{nickName}}'></input>
-          <view class='divLine'></view>
-          <input type='text' placeholder='请填写您的邮箱' auto-focus='' bindinput='setEmail' value='{{email}}'></input>
-          <view class='divLine'></view>
-          <textarea  type='text' placeholder='请填写评论内容' auto-focus='' bindinput='setComment' value='{{messageContent}}'></textarea>
-          <view class='divLine'></view>
-        </modal>
-
         <view class='divLine'></view>
       </block>
     </scroll-view>
   </view>
+
+  <modal hidden="{{replyHidden}}" title='填写评论内容' confir-text='回复' cancel-text='取消' bindcancel='cancel' bindconfirm='confirm'>
+    <input type='text' placeholder='请填写您的昵称' auto-focus='' bindinput='setNickName' value='{{nickName}}'></input>
+    <view class='divLine'></view>
+    <input type='text' placeholder='请填写您的邮箱' auto-focus='' bindinput='setEmail' value='{{email}}'></input>
+    <view class='divLine'></view>
+    <textarea  type='text' placeholder='请填写评论内容' auto-focus='' bindinput='setComment' value='{{messageContent}}'></textarea>
+    <view class='divLine'></view>
+  </modal>
 
   <modal hidden="{{messageHidden}}" title='填写留言内容' confir-text='确定' cancel-text='取消' bindcancel='cancel' bindconfirm='sendMessage'>
     <input type='text' placeholder='请填写您的昵称' auto-focus='' bindinput='setNickName' value='{{nickName}}'></input>
